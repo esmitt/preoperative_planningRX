@@ -1,0 +1,48 @@
+% chap1.tex {Introductory Chapter}
+%\part{some}
+
+\chapter{Introducci\'on}
+
+La fractura de huesos es una de las principales causas de lesiones en el ser humano ocasionado por traumatismos de mediano y alto impacto. Entre las causas que originan las fracturas se encuentran los golpes con objetos contundentes, dislocaciones, ca\'idas de alg\'un transporte en movimiento \'o de alguna altura, entre otras. Particularmente, la fractura de huesos largos de los miembros inferiores (e.g. f\'emur, tibia) es causada principalmente por contactos de alto impacto sobre las piernas que tuercen o aplastan los huesos. En ocasiones, la gravedad de la fractura implica que \'esta requiere una cirug\'ia con el objetivo de colocar alg\'un fijador externo \'o interno para reducir la misma.
+
+Si un paciente requiere una intervenci\'on quir\'urquica por causa de una fractura, el m\'edico tratante debe hacer un estudio previo sobre el caso para aplicar procedimientos efectivos y correctos. Como parte del estudio la planificaci\'on preoperatoria es de suma utilidad e indispensable. Una planificaci\'on preoperatoria \'o prequir\'urgica consiste en una serie de pasos previos a una cirug\'ia con el objeto de enumerar todos los procedimientos y herramientas a utilizar en el quir\'ofano. La planificaci\'on entre otras cosas, permite identificar y clasificar una fractura de manera precisa, ya que dependiendo del tipo de fractura las acciones a realizar pueden variar.
+
+La planificaci\'on usa im\'agenes capturadas por Rayos-X convencionales del \'area afectada del paciente como herramienta vital para su construcci\'on. Los cirujanos ortop\'edicos deben llevar a cabo las planificaciones preoperatorias, las cuales incluyen el uso de material adicional (l\'apices, regla, entre otros) y una inversi\'on de tiempo considerable para su realizaci\'on. Los sistemas CAOS (\textit{Computer Aided Orthopaedic Surgery} - Cirug\'ia Ortop\'edica Asistida por Computador) permiten asistir al cirujano ortop\'edico en la planificaci\'on preoperatoria de cirug\'ias del sistema muscoesquel\'etico. Son herramientas que permiten a los m\'edicos realizar una planificaci\'on en un tiempo m\'as corto y con una menor cantidad de materiales. Cada vez es m\'as frecuente la presencia de estos sistemas en el campo de la medicina, particularmente existe un gran crecimiento en el \'area de Radiolog\'ia \cite{GIGE00}.
+
+%Dentro de los sistemas CAD, existe una clasificaci\'on conocida como sistemas CAOS, los cuales permiten asistir al cirujano ortop\'edico en la planificaci\'on preoperatoria de cirug\'ias del sistema muscoesquel\'etico. La planificaci\'on preoperatoria es el primer paso en el manejo del paciente que va a ser sometido a una cirug\'ia ortop\'edica, puesto que permite establecer la t\'actica quir\'urgica en el procedimiento a realizar, siendo adem\'as una gu\'ia fidedigna para determinar el resultado final de la cirug\'ia; sin embargo este procedimiento puede ser realizado de manera imprecisa y poco efectiva.
+
+En este trabajo, se propone un sistema CAOS para la planificación preoperatoria de fracturas de los miembros inferiores. En nuestro trabajo, el m\'edico traumat\'ologo coloca una placa de Rayos-X sobre un negatoscopio y toma una fotograf\'ia para obtener un archivo con formato de imagen (JPG, PNG, BMP). Basado en la adquisici\'on de este archivo, el m\'edico puede efectuar la planificaci\'on. El esquema propuesto consta de siete etapas: Adquisici\'on de la Imagen, Calibraci\'on de la Imagen, Mejoramiento de la Imagen, Segmentaci\'on y Ensamblaje de la Fractura, Colocaci\'on del Implante, Deformaci\'on del Implante y Generaci\'on del Reporte. Adicionalmente, existen m\'odulos funcionales que son ejecutadas en m\'as de una etapa. En \cite{RAM10}, se presenta un trabajo describiendo el sistema CAOS propuesto y cada una de sus etapas de manera general. 
+
+En el caso cuando la fractura se encuentra cerca de una articulaci\'on y se requiere de una cirug\'ia, el m\'edico cirujano debe realizar un doblado del implante para una eficaz correcci\'on de la fractura. Este trabajo presenta, una modificaci\'on del algoritmo presentado por Schaefer et al. \cite{SCHAF06} basado en la t\'ecnica de \textit{Moving Least Squares} para realizar dicha deformaci\'on. Este algoritmo se utiliza en el sistema CAOS propuesto, en la etapa de \textit{Deformaci\'on del Implante}. El algoritmo propuesto obtiene resultados similares a los que se obtienen en una cirug\'ia real, de acuerdo a la informaci\'on obtenida en nuestras pruebas. En \cite{RAM11} se describe esta nueva t\'ecnica de deformaci\'on que ser\'a presentada en el V Simposio Iberoamericano en Computaci\'on Gr\'afica.
+
+Este documento consta de seis cap\'itulos donde se abarcan los conceptos requeridos para la construcci\'on de una planificaci\'on preoperatoria as\'i como cada uno de los m\'odulos desarrollados. El Cap\'itulo 1 muestra la estructura anat\'omica del ser humano enfocado en el sistema esquel\'etico, as\'i como lo referente a las fracturas de hueso. El Cap\'itulo 2 presenta los aspectos relacionado con la planificaci\'on preoperatoria como un paso importante antes de realizar una cirug\'ia. Al mismo tiempo se explica la importancia y funcionamiento de los sistemas CAOS. Nuestra propuesta para un sistema CAOS de planificaci\'on preoperatoria para fracturas de los miembros inferiores es presentada en el Cap\'itulo 3. Cada una de las etapas es descrita con detalle. El algoritmo de deformaci\'on del implante implementado en este trabajo se explica en el Cap\'itulo 4. En el Cap\'itulo 5 se presentan los resultados obtenidos en las pruebas realizadas en diversas etapas de nuestra propuesta. Finalmente, las Conclusiones y Trabajos Futuros se incluyen en el \'ultimo cap\'itulo de este documento.
+
+%CAPITULO 3
+%que son los rayos X y para que sirven y son utilizados
+%importancia de la planificacion preoperatoria, como herramienta en la toma de decisiones
+%sistemas CAD y su importancia en la medicina
+%sistemas CAD existentes en general
+%sistemas CAD para la planificacion de huesos y/o rayos X
+%lo ultimo en sistemas CAD
+%implantes colocados en sistemas CAD vistos, template de librerias
+%warping sobre los implantes, tecnicas y metodos
+
+
+
+%planificacion preoper
+%paso previo importante
+%imagenes medicas
+%centros medicos rurales
+%sistemas digitales
+%sistemas CAD y CAOS
+% almacenar casos clinicos
+% reducen tiempo de planificacion
+% serie de etapas
+%calibracion con orificios
+%medidas cuasi-exactas
+%implanetes INABIO
+%doblado de implantes
+%tecnica interactiva imagenes 2D
+% basado en MLS
+%manipulado por puntos
+%HUC

@@ -1,0 +1,212 @@
+%% LyX 1.6.5 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[10pt,spanish]{article}
+\usepackage{mathptmx}
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[paperwidth=21.59cm,paperheight=27.94cm]{geometry}
+\usepackage{multicol}
+\geometry{verbose,tmargin=3.5cm,bmargin=4cm,lmargin=2.5cm,rmargin=2.5cm,headheight=1.25cm,footskip=1.25cm}
+\setlength{\parskip}{0.2mm}
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{9.1mm}
+\usepackage{graphicx}
+
+%\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>.}}
+
+\begin{document}
+\date{}
+
+\noindent \begin{center}
+\textbf{\Large Planificaci\'on Preoperatoria para Fracturas en los Miembros Inferiores}
+\par{\Large \par}
+
+\noindent
+\vspace{1mm}\textbf{\textit{\large Preoperative Planning for Fractures on Lower Extremities}}
+\par{\large \par}
+
+\noindent
+\textbf{Esmitt Ram\'irez J., Tutor: Ernesto Coto}
+\par
+
+\noindent
+{\small Centro de Computaci\'on Gr\'afica, Universidad Central de Venezuela, Caracas, Venezuela}
+\par{\small \par}
+
+%\noindent
+%{\small Caracas,Venezuela}
+%\par{\small \par}
+
+\noindent
+\texttt{esmitt.ramirez@ciens.ucv.ve}
+\par
+
+
+\noindent
+
+%\textsl{\underbar{Artículo recibido en Mes día, 20XX; aceptado en
+%Mes día, 20XX}}
+%\par
+\end{center}
+
+
+%\begin{multicols}{2}
+
+\thispagestyle{empty}
+
+\noindent \textbf{\small Resumen.}{\small{} La planificación preoperatoria es un paso que debe realizarse previo a cualquier procedimiento quirúrgico. Tradicionalmente esta planificación se realiza de forma manual y necesita una inversión de tiempo considerable. En traumatología, los sistemas de Cirugía Ortopédica Asistida por Computador son utilizados ampliamente para la planificación de cirugías de fracturas. Muchos de estos sistemas requieren que el centro hospitalario donde sea instalado posea una infraestructura hospitalaria digital previa y que existan equipos digitales de adquisición de Rayos-X. Este factor es una limitante para una gran parte de los centros hospitalarios en Venezuela. En este trabajo se presenta  un sistema para la planificación preoperatoria de fracturas en los miembros inferiores que puede ser utilizado en PCs convencionales sin ningún otro requerimiento. Nuestro sistema consiste de una serie de etapas con funcionalidades bien definidas para el desarrollo de la planificación, las cuales se describen en detalle en este trabajo. Las pruebas realizadas muestran una reducción considerable del tiempo en realizar una planificación.}{\small \par}
+\medskip
+
+\textbf{\small Palabras clave:}{\small{} planificaci\'on preoperatoria, fractura, CAOS, MLS.}{\small \par}
+\medskip
+\smallskip
+
+\section{Introducción}
+
+\noindent La fractura de huesos es una de las principales causas de lesiones en el ser humano ocasionada por traumatismos de mediano y alto impacto. En ocasiones, la gravedad de la fractura implica que ésta requiera una cirugía para colocar algún fijador externo ó interno. En este caso, el médico tratante debe hacer un estudio previo sobre dicho caso clínico. Como parte de este estudio cabe destacar la planificación preoperatoria. Una planificación preoperatoria consiste en una serie de pasos previos a una cirugía con el objetivo de enumerar todos los procedimientos y herramientas a utilizar en el quirófano y así obtener una cirugía satisfactoria. La planificación permite identificar y clasificar una fractura de manera precisa, así como decidir las diversas acciones a realizar.
+
+\hspace{14.2pt}Solo algunos cirujanos ortopédicos llevan a cabo dichas planificaciones preoperatorias, debido al requerimiento de material adicional y la inversión considerable de tiempo para su realización. Los sistemas de Cirugía Ortopédica Asistida por Computador (CAOS) permiten asistir al cirujano en la planificación preoperatoria de cirugías ortopédicas.
+
+\hspace{14.2pt}En este trabajo se propone un sistema CAOS para la planificación preoperatoria de fracturas de los miembros inferiores con el cual el cirujano puede realizar la planificación de forma digital y en un periodo corto de tiempo.
+
+\hspace{14.2pt}En la siguiente sección se describe nuestra propuesta y sus módulos asociados. Posterior a ello, se muestran los resultados obtenidos dentro de un centro hospitalario. Finalmente, se exponen las conclusiones y recomendaciones.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Esquema Propuesto}
+
+Se presenta un esquema para la planificación preoperatoria digital en el área de traumatología. En la Fig. \ref{fig:scheme} se plantea un esquema general para los sistemas de planificación preoperatoria en dicha área. El esquema se puede resumir en 7 etapas y módulos adicionales que complementan la funcionalidad del esquema.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.7\columnwidth]{scheme.png}
+	\caption{Esquema general de la planificaci\'on preoperatoria digital en Ortopedia}
+	\label{fig:scheme}
+\end{figure}
+
+\hspace{14.2pt}El sistema recibe como entrada una imagen correspondiente a una placa radiográfica que muestra la fractura de un paciente. Con la imagen, se procede a un proceso de calibración para obtener medidas aproximadas de las proporciones dentro de la imagen (e.g. longitud del hueso en mm.). Una vez calibrada la imagen, es posible aplicar técnicas de mejoramiento de imágenes con el objetivo de ayudar en la extracción de los fragmentos de una fractura por parte del traumatólogo. Luego de esto el traumatólogo efectúa el ensamblaje del hueso afectado como parte del procedimiento de planificación.
+
+\hspace{14.2pt}La reducción de la fractura puede requerir de un implante para la eficaz reducción de la fractura. Dicho implante será seleccionado de un conjunto de implantes asociados al tipo de fractura a tratar. Una vez colocado, el sistema permite al médico aplicar deformaciones al implante dependiendo de la reducción. Al finalizar estos pasos, se obtiene un reporte donde se muestra el calco preoperatorio y los datos tanto del paciente como del procedimiento
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Adquisición de la Imagen}
+
+\hspace{14.2pt} las imágenes se obtienen empleando una cámara digital. El procedimiento consiste en colocar la placa sobre un negatoscopio para generar el contraste adecuado. Luego se toma una fotografía de la placa y posteriormente se descarga la imagen (en formato JPG, BMP, PNG o GIF) al computador. Conocer las dimensiones reales de una imagen es relevante ya que permitirá realizar medidas sobre la misma. Las medidas realizadas sobre la anatomía de un paciente permiten obtener las dimensiones reales de los segmentos de una fractura, la longitud de los huesos, etc. A continuación, se muestran los pasos para convertir de píxeles a milímetros en la imagen de estudio en un proceso llamado calibración de la imagen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Calibración de la Imagen}
+
+\hspace{14.2pt}La calibración de la imagen consiste en realizar la correspondencia píxel-milímetro y así realizar medidas sobre la imagen a trabajar. Una solución común para la calibración en procesos donde se digitalizan placas de Rayos-X, es la introducción de un objeto de tamaño conocido en la adquisición llamado objeto de referencia. Entonces, el proceso de calibración consiste en definir un objeto de referencia que sea utilizado en todos los casos de adquisición. Con el dicho objeto, se puede calcular un factor de correspondencia píxel-milímetro el cual se utilizará para realizar las medidas correspondientes.
+
+En nuestrapropuesta se utilizó como objeto de referencia una perforadora de papel. La elección de este dispositivo de oficina se basó en la necesidad de utilizar un objeto que esté disponible en todo momento y presente en el momento de la adquisición de la imagen independientemente del tipo de negatoscopio empleado. Dado que la perforadora de papel siempre crea los orificios en los bordes de la placa, solamente se consideran las franjas dentro de la placa donde posiblemente se encuentren éstas. Entonces, por cada imagen se extraen cuatro sub-imágenes: la parte superior, inferior, derecha e izquierda de la imagen. Luego, para cada una de las sub-imágenes, se ejecuta el Algoritmo de Búsqueda de Orificios el cual es descrito en detalle en \cite{RAM_TEC10}.
+
+Luego de calibrar la imagen el traumatólogo tiene la posibilidad de modificar ciertos valores visuales dentro de la imagen para mejorar la calidad visual de la misma. Estos valores son explicados a continuación
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mejoramiento  de la Imagen}
+
+\hspace{14.2pt}Para mejorar la calidad visual de las imágenes se utilizó la modificación del contraste de la placa de Rayos-X. La modificación se efectúa definiendo dos características de la imagen: ventana (window) y nivel (level). La ventana define el tamaño de un rango de intensidades de valores consecutivos dentro de un histograma. El nivel define el valor medio dentro de dicho rango de valores. Ambos valores se encuentran en el rango de [0 - 255].
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Segmentación y ensamblaje de la fractura}
+
+\hspace{14.2pt}Para efectuar la reducción de una fractura se requiere extraer los fragmentos de hueso. Con estos fragmentos, el médico los ensambla y coloca en sus posiciones correctas. La selección de los fragmentos de la fractura en la imagen, requiere un proceso de segmentación \cite{UMB05} donde se separen dichos fragmentos del hueso a tratar. Los algoritmos existentes para la segmentación automática de imágenes de Rayos-X no son triviales ya que no existe un procedimiento estándar para su ejecución. En la literatura existen diversas técnicas para la segmentación de imágenes médicas pero no son 100\% efectivas para todas las imágenes. Para conseguir una segmentación adecuada por lo general se emplean varias de éstas técnicas y/o se aplican modificaciones acorde a la imagen en cuestión.
+
+Otra forma de extracción de fragmentos es con la segmentación manual, la cual consiste en delinear los bordes de los fragmentos e ir construyendo un polígono que encierre los fragmentos, como se observa en la Fig. \ref{fig:pieces}.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.55\columnwidth]{pieces.png}
+	\caption{Segmentación manual de una fractura donde se muestra la placa de Rayos-X con la fractura así como el polígono que delimita la sección a segmentar}
+	\label{fig:pieces}
+\end{figure}
+ 
+En la Fig. \ref{fig:pieces} se observa una serie de puntos guía (en color rojo) sobre el contorno del fragmento unido por una línea formando un polígono irregular. Posteriormente, es posible aplicar rotaciones y traslaciones sobre el fragmento para ser colocado en su posición correcta y así realizar la reducción por parte del traumatólogo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Colocación del implante}
+
+\hspace{14.2pt}Un hueso fracturado debe ser colocado en la posición adecuada hasta que sea lo suficientemente fuerte como para soportar el peso del paciente, empleando algún tipo de implante. Hasta el siglo pasado \cite{website:ruedi}, los médicos se basaron en emplear solamente yesos y férulas para apoyar el hueso por fuera del cuerpo. Actualmente, se puede trabajar directamente con el hueso y colocar implantes internos. Los tipos más comunes de la implantes son: los alambres, placas, barras, clavijas, pines, clavos y tornillos.
+
+Al mismo tiempo, se plantea el uso de una librería ó repositorio donde se almacenan los diversos implantes. Una librería de implantes es un conjunto de templates de traumatología clasificadas bajo algún criterio (decidido por el médico traumatólogo). De esta forma, se selecciona un tipo de implante (clavo, placa, tornillo ó prótesis) y sus dimensiones (e.g. 12mm, 3.5 mm, etc.) para ser colocados en la planificación preoperatoria a construir.
+
+La librería de implantes utilizada se almacena en una base de datos y se muestra al traumatólogo como un árbol, ver Fig. \ref{fig:arbol}, donde cada nivel de jerarquía indica un orden de acuerdo a un criterio.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.4\columnwidth]{arbol.png}
+	\caption{Vista en forma de árbol para representar los implantes del repositorio}
+	\label{fig:arbol}
+\end{figure}
+
+Dado que el implante se encuentra representado como una geometría en 3D, es necesario realizar el proceso de despliegue a 2D. Para ello, se aplica la proyección ortogonal que consiste en trazar rayos paralelos desde la posición de la cámara en dirección hacia el objeto de interés. La posición de la cámara se encuentra a una distancia infinita del objeto, resultando que los rayos de visión sean paralelos al plano de proyección. Los puntos de intersección de los rayos con el plano de proyección corresponden al resultado esperado.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Deformación del implante}
+
+\hspace{14.2pt}En muchas ocasiones, es necesario moldear (deformar) el implante tal que sea anatómicamente correcto y se adapte al hueso fracturado. En el quirófano el cirujano emplea un alicate especial para el doblado de los implantes. Por otra parte, el doblado se realiza simulando la aplicación de una fuerza mecánica tal como se realiza en un quirófano.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Generaci\'on del reporte}
+
+\hspace{14.2pt}Al realizar el proceso de colocación de los implantes para un paciente, se obtiene una imagen que muestra la fractura en cuestión, los implantes, anotaciones y medidas. Con esta información, se genera un reporte digital que permita su impresión, envío por e-mail, etc.
+
+Un reporte consiste de una imagen seleccionada que incluye implantes, medidas e información que describe al paciente y los procedimientos quirúrgicos a emplear. El texto que aparece en un reporte, se encuentra por encima de la imagen o en una caja de texto (textbox), y los implantes a utilizar se deben mostrar. La creación de un reporte de la planificación permitirá tener un resumen de todo el trabajo realizado. El hecho de que el reporte sea digital contribuye a desarrollar la Telemedicina la cual consiste en la prestación de servicios de medicina a distancia, particularmente para el diagnóstico.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pruebas y Resultados}
+
+\hspace{14.2pt}Las pruebas efectuadas se llevaron a cabo por los miembros del Servicio de Traumatología y Ortopedia del Hospital Universitario Clínico de Caracas (HUC). El Dr. Carlos Sánchez, miembro de dicho servicio, es el encargado de llevar a cabo las pruebas. Se llevo a cabo un estudio que tomo lugar a lo largo de un período de 4 meses, desde Septiembre a Diciembre 2010. La prueba consistió en realizar la planificación preoperatoria a un grupo de pacientes que eran atendidos en el HUC.
+
+Las causas de las fracturas de este estudio fueron debido a caídas simples (7 casos representando el 35\%) e impactos de arma de fuego y caídas en motocicletas (13 casos, 65\%). Según la clasificación AO, se encontraron 4 casos de fractura del tipo 32B3, siendo está la mayor entre las otras. Mientras más compleja sea la fractura, más tiempo se debe invertir en realizar la planificación. En la Fig. \ref{fig:grafico} se muestra un gráfico comparativo del tiempo invertido en realizar la planificación de forma convencional y con nuestra propuesta.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.4\columnwidth]{graficotime.png}
+	\caption{Tiempo en minutos para realizar una planificación preoperatoria de diversas fracturas empleando la forma convencional (línea azul) y con nuestra propuesta (línea roja)}
+	\label{fig:grafico}
+\end{figure}
+
+Para el estudio, el tiempo de ejecución de una planificación se encuentra en el rango entre los 14 min. a 23 min. Por otro lado la planificación convencional toma un tiempo que se encuentra en el rango de los 32 min. a 65 min (una reducción del 61\%).
+Un factor importante para corroborar un buen resultado es comparar visualmente las planificaciones obtenidas de ambos. En la Fig. \ref{fig:comparison} se muestra un ejemplo realizado a un paciente con una fractura del tipo 42C3.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.8\columnwidth]{comparison.png}
+	\caption{Un ejemplo empleando planificación convencional vs. nuestra propuesta}
+	\label{fig:comparison}
+\end{figure}
+
+Para la planificación convencional se indican los fragmentos de hueso en color morado con respecto al color azul tanto del hueso como del implante y los tornillos. Se puede observar como la calidad de la imagen depende de la precisión que tenga el médico al momento de realizar la planificación. Por otro lado la letra escrita colocada sobre la planificación puede variar de médico en médico, dificultando la lectura del mismo. Un factor a destacar es la orientación de la planificación al momento de ser realizada. La Fig. \ref{fig:comparison} ha sido rotada para poder ser leída correctamente. El traumatólogo que la realizó era zurdo, por lo cual tiende a inclinar la hoja de calco para que sea más cómodo realizar la planificación sobre ella.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusiones}
+\hspace{14.2pt}En este trabajo se presenta una solución para planificación preoperatoria en el área de traumatología enfocada en fracturas en los miembros inferiores. Nuestra propuesta fue probado por los miembros del Servicio de Traumatología y Ortopedia del Hospital Universitario de Caracas (HUC). Para emplear la solución planteada solo se requiere de al menos un computador y una cámara.
+
+Nuestro sistema está diseñado para ser utilizado en sistemas hospitalarios que no cuenten con una infraestructura hospitalaria ni equipos de adquisición de imágenes digitales. Es por ello que se planteó emplear una cámara cómo mecanismo de adquisición de las imágenes en formato digital. Al mismo tiempo se presentó ciertas variables a tomar en cuenta para la adquisición de la placa de Rayos-X en formato digital: ubicación del negatoscopio con respecto a la cámara y el ángulo formado con respecto a la placa. Para la calibración de las imágenes se empleó una perforadora de orificio donde se utilizó el Algoritmo de Búsqueda de Orificios \cite{RAM_TEC10}. De esta manera, todas las imágenes fueron capturadas satisfactoriamente.
+
+Según los estudios realizados se determinó que el tiempo de planificación con nuestra propuesta es menor que al realizar la planificación convencional. Al realizar la planificación de manera convencional se requiere de una inversión de tiempo considerable por parte del cirujano. Con la solución propuesta el tiempo de construcción se reduce en un 61\% con respecto a la convencional. Parte de esta ganancia de tiempo se debe a la facilidad al utilizar las herramientas ofrecidas por nuestra herramienta como las anotaciones, medidas con regla, ángulos y círculos, selección de un implante desde una librería y uso de la biblioteca de AO, así como su almacenamiento para un posterior estudio. 
+
+La planificación preoperatoria digital permite ahorrar tiempo en el quirófano para los cirujanos. Esto es debido a que solamente se llevará a un paciente a la sala de operación si se cuenta con todo el material necesario que se conocerá a priori. Además, nuestra propuesta puede ser empleada como una aplicación didáctica para los médicos en formación ó los médicos que estén realizando estudios especializados en el área de Traumatología.
+
+En la solución propuesta es posible incorporar nuevas funcionalidades con el objetivo de ampliar el alcance de nuestra solución. La solución está diseñada para fracturas en miembros inferiores pero es escalable a otras partes del cuerpo. Esta aplicación es un gran avance en Venezuela en el desarrollo de sistemas CAOS de planificación preoperatoria. Actualmente se encuentra en mejora continua gracias al feedback de parte del grupo de médicos traumatólogos del HUC.
+
+\thispagestyle{empty}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{books}
+
+
+\thispagestyle{empty}
+%\end{multicols}
+\end{document}
